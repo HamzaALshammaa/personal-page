@@ -1,5 +1,11 @@
 import React from 'react';
 import Header from './components/Header';
+import About from './components/About';
+import Experience from './components/Experience';
+import Education from './components/Education';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -7,8 +13,13 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <h1>Hello, World!</h1>
+        <About />
+        <Experience />
+        <Education />
+        <Skills />
+        <Contact />
       </main>
+      <Footer />
     </div>
   );
 }
