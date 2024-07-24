@@ -10,7 +10,6 @@ function App() {
       <Header />
       <main>
         <About />
-        <Experience />
       </main>
     </div>
   );
