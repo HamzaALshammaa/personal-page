@@ -14,6 +14,11 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
+      <div className="symbols">
+        {['C++', 'JS', 'Py', 'PHP', '{}', ';', '&&', '</>', 'HTML'].map((symbol, index) => (
+          <div key={index} className="symbol" aria-label={symbol}>{symbol}</div>
+        ))}
+      </div>
       <section className="main">
         <section className="about-section" id="about">
           <div className="container">

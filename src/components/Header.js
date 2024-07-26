@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Header.css';
 
 const Header = () => (
-    <nav className="navbar navbar-expand-lg header">
-        <a className="navbar-brand" href="#">Hamza AL-Shammaa</a>
+    <nav className="navbar navbar-expand-lg header" role="navigation">
+        <a className="navbar-brand" href="#" role="button">Hamza AL-Shammaa</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
@@ -28,5 +29,9 @@ const Header = () => (
         </div>
     </nav>
 );
+
+Header.propTypes = {
+    // Define prop types if needed
+};
 
 export default Header;
