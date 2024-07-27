@@ -1,83 +1,97 @@
-@mixin dots($count) {
-	$text-shadow: ();
-	@for $i from 0 through $count {
-		$text-shadow: $text-shadow,
-			(-0.5 + (random()) * 3) +
-				em
-				(-0.5 + (random()) * 3) +
-				em
-				7px
-				hsla(random() * 360, 100%, 50%, 0.9);
-	}
-	text-shadow: $text-shadow;
-}
+$quantity: 10; // Reduced quantity for lower density
 
-html {
-	font: 1rem/1.3 Serif; /* Adjust the base font size */
-	overflow-x: hidden; /* Prevent horizontal scroll */
-	background: #123;
+html,
+body {
+	height: 100%;
 }
 
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	background: var(--bg-color);
-	overflow-y: auto; /* Enable vertical scroll */
-	position: relative;
-	color: #fff; /* Ensure text is visible */
+	background: url(https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg)
+		no-repeat center center fixed;
+	background-size: cover;
 }
 
-body,
-head {
-	display: block;
-	font-size: 1rem; /* Set a more appropriate font size */
-	color: transparent;
-}
-
-head::before,
-head::after,
-body::before,
-body::after {
+.symbol {
 	position: fixed;
-	top: 50%;
 	left: 50%;
-	width: 3em;
-	height: 3em;
-	content: '.';
-	mix-blend-mode: screen;
-	animation: 44s -27s move infinite ease-in-out alternate;
-}
+	top: 50%;
+	font-size: 2rem; // Adjust size for symbols
+	margin: -1rem 0 0 1rem;
+	animation: ease 200s alternate infinite;
+	pointer-events: none;
+	color: white;
 
-body::before {
-	@include dots(40);
-	animation-duration: 44s;
-	animation-delay: -27s;
-}
-
-body::after {
-	@include dots(40);
-	animation-duration: 43s;
-	animation-delay: -32s;
-}
-
-head::before {
-	@include dots(40);
-	animation-duration: 42s;
-	animation-delay: -23s;
-}
-
-head::after {
-	@include dots(40);
-	animation-duration: 41s;
-	animation-delay: -19s;
-}
-
-@keyframes move {
-	from {
-		transform: rotate(0deg) scale(12) translateX(-20px);
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		transform-origin: -10vw;
 	}
-	to {
-		transform: rotate(360deg) scale(18) translateX(20px);
+
+	&::before {
+		background: black;
+		opacity: 0.4;
+		animation: drift ease alternate infinite;
+	}
+
+	&::after {
+		background: white;
+		opacity: 0;
+		box-shadow: 0 0 0vw 0vw yellow;
+		animation: drift ease alternate infinite, flash ease infinite;
+	}
+}
+
+// Randomize Symbols Motion
+@for $i from 1 through $quantity {
+	$steps: random(12) + 16;
+	$rotationSpeed: random(10) + 8s;
+
+	.symbol:nth-child(#{$i}) {
+		animation-name: move#{$i};
+
+		&::before {
+			animation-duration: #{$rotationSpeed};
+		}
+
+		&::after {
+			animation-duration: #{$rotationSpeed}, random(6000) + 5000ms;
+			animation-delay: 0ms, random(8000) + 500ms;
+		}
+	}
+
+	@keyframes move#{$i} {
+		@for $step from 0 through $steps {
+			#{percentage($step / $steps)} {
+				transform: translateX(#{random(100) - 50}vw)
+					translateY(#{random(100) - 50}vh)
+					scale(#{random(75) / 100 + 0.25});
+			}
+		}
+	}
+}
+
+@keyframes drift {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes flash {
+	0%,
+	30%,
+	100% {
+		opacity: 0;
+		box-shadow: 0 0 0vw 0vw yellow;
+	}
+	5% {
+		opacity: 1;
+		box-shadow: 0 0 2vw 0.4vw yellow;
 	}
 }

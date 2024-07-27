@@ -7,13 +7,16 @@ import Contact from './components/Contact';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
+import Symbols from './components/Symbols';
 import './App.css';
+import './components/background.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Hero />
+      <Symbols />
       <section className="main">
         <section className="about-section" id="about">
           <div className="container">
