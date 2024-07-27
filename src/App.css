@@ -1,5 +1,7 @@
+@import './components/background.css';
+
 :root {
-  --bg-color: #000000;
+  --bg-color: #00000000;
   --text-color: #343a40;
   --border-color: #e0e0e0;
   --link-color: #007bff;
@@ -10,9 +12,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
   overflow-x: hidden;
-  /* Ensure no horizontal scroll */
+  overflow-y: auto;
+  position: relative;
 }
 
 .header {
@@ -31,7 +33,7 @@ body {
 
 .main {
   background: var(--bg-color);
-  padding-top: 100vh;
+  padding-top: 100px;
 }
 
 .about {
@@ -134,24 +136,4 @@ body {
   .languages .card {
     padding: 15px;
   }
-}
-
-.symbols {
-  position: fixed;
-  /* Position fixed to cover entire viewport */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-  /* Ensure it's below other content */
-}
-
-.symbol {
-  position: absolute;
-  font-size: 5rem;
-  opacity: 0.7;
-  pointer-events: none;
 }
