@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faNodeJs, faPython, faPhp, faJsSquare, faHtml5, faCss3Alt, faLaravel } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faReact, faNodeJs, faPython, faPhp, faJsSquare, faHtml5, faCss3Alt, faLaravel, faDatabase } from '@fortawesome/free-brands-svg-icons';
 
 import './Languages.css';
 
@@ -69,7 +68,7 @@ const languages = [
 ];
 
 const Languages = () => (
-    <div className="languages">
+    <section id="languages" className="languages">
         <div className="container">
             <h2>Languages & Frameworks</h2>
             <div className="card-deck">
@@ -85,7 +84,7 @@ const Languages = () => (
                 ))}
             </div>
         </div>
-    </div>
+    </section>
 );
 
 export default Languages;

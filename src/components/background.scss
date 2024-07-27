@@ -1,4 +1,4 @@
-$quantity: 10; // Reduced quantity for lower density
+$quantity: 20;
 
 html,
 body {
@@ -15,11 +15,11 @@ body {
 	position: fixed;
 	left: 50%;
 	top: 50%;
-	font-size: 2rem; // Adjust size for symbols
+	font-size: 2rem;
 	margin: -1rem 0 0 1rem;
 	animation: ease 200s alternate infinite;
 	pointer-events: none;
-	color: white;
+	color: rgba(255, 255, 255, 0.4);
 
 	&::before,
 	&::after {
@@ -32,7 +32,7 @@ body {
 	}
 
 	&::before {
-		background: black;
+		background: rgba(0, 0, 0, 0.4);
 		opacity: 0.4;
 		animation: drift ease alternate infinite;
 	}
@@ -40,17 +40,17 @@ body {
 	&::after {
 		background: white;
 		opacity: 0;
-		box-shadow: 0 0 0vw 0vw yellow;
+		box-shadow: 0 0 0vw 0vw rgba(255, 255, 0, 0.2);
 		animation: drift ease alternate infinite, flash ease infinite;
 	}
 }
 
-// Randomize Symbols Motion
 @for $i from 1 through $quantity {
 	$steps: random(12) + 16;
 	$rotationSpeed: random(10) + 8s;
 
 	.symbol:nth-child(#{$i}) {
+		color: #{mix(#123456, #abcdef, random(100) / 100)};
 		animation-name: move#{$i};
 
 		&::before {
@@ -88,10 +88,10 @@ body {
 	30%,
 	100% {
 		opacity: 0;
-		box-shadow: 0 0 0vw 0vw yellow;
+		box-shadow: 0 0 0vw 0vw rgba(255, 255, 0, 0.2);
 	}
 	5% {
 		opacity: 1;
-		box-shadow: 0 0 2vw 0.4vw yellow;
+		box-shadow: 0 0 2vw 0.4vw rgba(255, 255, 0, 0.2);
 	}
 }
