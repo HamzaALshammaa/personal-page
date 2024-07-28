@@ -1,4 +1,6 @@
 @import './components/background.css';
+@import './components/About.css';
+@import './components/Header.css';
 
 :root {
   --bg-color: #f8f9fa;
@@ -17,48 +19,7 @@ body {
   position: relative;
 }
 
-.header {
-  background: #343a40;
-  padding: 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.header .navbar-brand,
-.header .nav-link {
-  color: white !important;
-}
-
 .main {
   background: var(--bg-color);
   padding-top: 100px;
-}
-
-.about {
-  padding: 100px 0;
-}
-
-.about .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.about .about-content {
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px var(--shadow-color);
-}
-
-.about h2 {
-  margin-bottom: 20px;
-  color: var(--text-color);
-}
-
-.about p {
-  color: #6c757d;
 }

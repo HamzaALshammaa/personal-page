@@ -7,7 +7,7 @@ const Hero = () => (
             <h1>I am Hamza AL-Shammaa</h1>
             <h2>Back-end Developer & Designer</h2>
             <div style={{ textAlign: 'center' }}>
-                <a href="#contact" className="btn">Contact Me</a>
+                <a href="#contact" className="contact_link">Contact Me</a>
             </div>
         </div>
     </section>

@@ -44,7 +44,7 @@ h2 {
     justify-content: center;
     border-radius: 40px 40px 0 0;
     overflow: hidden;
-    background: linear-gradient(45deg, #04185ca9 30%, #53ff7894 90%);
+    background: linear-gradient(135deg, #1a73e8 0%, #673ab7 100%);
     transition: 0.4s;
 }
 
