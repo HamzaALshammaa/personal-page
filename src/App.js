@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import Symbols from './components/Symbols';
 import './App.css';
 import './components/background.css';
-// add subtle animation to all the sections in the code
+
 function App() {
   return (
     <div className="App">
