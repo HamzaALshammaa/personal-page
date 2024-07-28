@@ -1,7 +1,7 @@
 @import './components/background.css';
 
 :root {
-  --bg-color: #00000000;
+  --bg-color: #f8f9fa;
   --text-color: #343a40;
   --border-color: #e0e0e0;
   --link-color: #007bff;
@@ -61,79 +61,4 @@ body {
 
 .about p {
   color: #6c757d;
-}
-
-.languages .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.languages .card-deck {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-.languages .card {
-  background: white;
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 8px var(--shadow-color);
-  transition: transform 0.3s;
-  width: calc(33.33% - 20px);
-}
-
-.languages .card:hover {
-  transform: translateY(-10px);
-}
-
-.languages .card h3 {
-  margin-top: 10px;
-  color: var(--text-color);
-}
-
-.languages .card p {
-  color: #6c757d;
-}
-
-.languages .card a {
-  display: block;
-  margin-top: 10px;
-  text-decoration: none;
-  color: var(--link-color);
-}
-
-.languages .card a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 1200px) {
-  .languages .card {
-    width: calc(50% - 20px);
-  }
-}
-
-@media (max-width: 768px) {
-  .languages .card {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 10px;
-  }
-
-  .header .navbar-brand,
-  .header .nav-link {
-    font-size: 14px;
-  }
-
-  .languages .card {
-    padding: 15px;
-  }
 }

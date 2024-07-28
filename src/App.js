@@ -23,7 +23,7 @@ function App() {
             <About />
           </div>
         </section>
-        <section className="languages" id="languages">
+        <section className="languages-section" id="languages">
           <div className="container">
             <Languages />
           </div>

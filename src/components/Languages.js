@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faNodeJs, faPython, faPhp, faJsSquare, faHtml5, faCss3Alt, faLaravel, faDatabase } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faNodeJs, faPython, faPhp, faJsSquare, faHtml5, faCss3Alt, faLaravel } from '@fortawesome/free-brands-svg-icons';
+import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 import './Languages.css';
 
@@ -68,23 +69,25 @@ const languages = [
 ];
 
 const Languages = () => (
-    <section id="languages" className="languages">
+    <div className="languages">
         <div className="container">
             <h2>Languages & Frameworks</h2>
-            <div className="card-deck">
+            <div className="cards-list">
                 {languages.map((language, index) => (
                     <div className="card" key={index}>
-                        <div className="card-body">
+                        <div className="card_image">
                             <FontAwesomeIcon icon={language.icon} size="4x" />
-                            <h3 className="card-title">{language.name}</h3>
-                            <p className="card-text">{language.description}</p>
-                            <a href={language.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Learn More</a>
+                        </div>
+                        <div className="card_body">
+                            <h3 className="card_title">{language.name}</h3>
+                            <p className="card_text">{language.description}</p>
+                            <a href={language.link} className="card_link" target="_blank" rel="noopener noreferrer">Learn More</a>
                         </div>
                     </div>
                 ))}
             </div>
         </div>
-    </section>
+    </div>
 );
 
 export default Languages;
