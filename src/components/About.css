@@ -1,6 +1,7 @@
 .about-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    background: transparent;
+    min-height: 100vh;
 }
 
 .about-section .container {
@@ -44,4 +45,9 @@
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-section .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
 }

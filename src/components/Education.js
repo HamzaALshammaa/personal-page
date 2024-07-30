@@ -1,33 +1,60 @@
 import React from 'react';
 import './Education.css';
-import { FaGraduationCap, FaChalkboardTeacher, FaDatabase, FaLanguage } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
-function Education() {
+const Education = () => {
+    const timelineItems = [
+        {
+            title: 'Bachelor of Science in Software Engineering',
+            institution: 'Mosul University, Mosul, Iraq',
+            date: 'Dec 2019 - May 2024',
+            icon: 'fa-graduation-cap',
+            side: 'left'
+        },
+        {
+            title: 'Database Engineering Certification',
+            institution: 'META',
+            date: 'Dec 2023 - Mar 2024',
+            icon: 'fa-database',
+            side: 'right'
+        },
+        {
+            title: 'TOT (Trainer Of Trainers)',
+            institution: 'Doinc For BD & Consulting, Mosul',
+            date: 'May 2023 - Dec 2023',
+            icon: 'fa-chalkboard-teacher',
+            side: 'left'
+        },
+        {
+            title: 'EF SET English Certificate (C1 Advanced)',
+            institution: 'Score: 61/100',
+            date: 'Dec 2017 - Jul 2019',
+            icon: 'fa-language',
+            side: 'right'
+        }
+    ];
+
     return (
-        <div className="education-section">
-            <div className="education-container">
+        <div className="education-section" id="education">
+            <div className="container">
                 <h2>Education & Certifications</h2>
-                <ul className="timeline">
-                    <li className="timeline-item" style={{ animationDelay: '0.2s' }}>
-                        <h3><FaGraduationCap className="icon" /> Bachelor of Science in Software Engineering</h3>
-                        <p className="institution">Mosul University, Mosul, Iraq</p>
-                        <p className="dates">Dec 2019 - May 2024</p>
-                    </li>
-                    <li className="timeline-item" style={{ animationDelay: '0.4s' }}>
-                        <h3><FaChalkboardTeacher className="icon" /> TOT (Trainer Of Trainers)</h3>
-                        <p className="institution">Doinc For BD & Consulting, Mosul</p>
-                        <p className="dates">Dec 2017 - Jul 2019</p>
-                    </li>
-                    <li className="timeline-item" style={{ animationDelay: '0.6s' }}>
-                        <h3><FaDatabase className="icon" /> Database Engineering Certification</h3>
-                        <p className="institution">META</p>
-                        <p className="dates">Dec 2023 - Mar 2024</p>
-                    </li>
-                    <li className="timeline-item" style={{ animationDelay: '0.8s' }}>
-                        <h3><FaLanguage className="icon" /> EF SET English Certificate (C1 Advanced)</h3>
-                        <p className="score">Score: 61/100</p>
-                    </li>
-                </ul>
+                <div className="timeline">
+                    {timelineItems.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className={`timeline-item ${item.side}`}
+                            initial={{ opacity: 0, x: item.side === 'left' ? -100 : 100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.2 }}
+                        >
+                            <div className="timeline-dot"></div>
+                            <div className="timeline-content">
+                                <h3>{item.title}</h3>
+                                <span>{item.institution} | {item.date}</span>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </div>
     );

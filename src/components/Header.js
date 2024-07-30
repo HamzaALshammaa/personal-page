@@ -1,22 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 
-const Header = () => (
-    <nav className="navbar navbar-expand-lg header" role="navigation">
-        <a className="navbar-brand" href="#Hamza AL-Shammaa">Hamza AL-Shammaa</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ml-auto">
-                {['about', 'experience', 'education', 'skills', 'contact'].map(item => (
-                    <li key={item} className="nav-item">
-                        <a className="nav-link" href={`#${item}`}>{item.charAt(0).toUpperCase() + item.slice(1)}</a>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    </nav>
-);
+const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <header>
+            <div className="navbar-brand">
+                <a className="navbar-brand" href="#">Hamza AL-Shammaa</a>
+            </div>
+            <button className="burger-icon" onClick={toggleMenu}>
+                ☰
+            </button>
+            <nav className={`nav-links ${isOpen ? 'open' : ''}`}>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+    );
+};
 
 export default Header;

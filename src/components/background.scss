@@ -6,9 +6,16 @@ body {
 }
 
 body {
-	background: url(https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg)
-		no-repeat center center fixed;
+	background: linear-gradient(135deg, #6a11cb, #2575fc);
 	background-size: cover;
+	background-attachment: fixed;
+	margin: 0;
+	padding: 0;
+}
+
+.background-wrapper {
+	min-height: 100vh;
+	padding: 20px;
 }
 
 .symbol {
@@ -31,8 +38,6 @@ body {
 		opacity: 0.4;
 		animation: drift ease alternate infinite;
 	}
-
-	// Removed &::after
 }
 
 @for $i from 1 through $quantity {

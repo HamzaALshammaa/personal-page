@@ -1,44 +1,35 @@
 .education-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #ece9e6, #ffffff);
-    display: flex;
-    justify-content: center;
+    background: transparent;
+    min-height: 100vh;
 }
 
-.education-container {
+.education-section .container {
     max-width: 1200px;
-    width: 100%;
     margin: 0 auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 .education-section h2 {
-    font-family: 'Merriweather', serif;
-    font-size: 2.5em;
-    color: #333;
+    text-align: center;
     margin-bottom: 40px;
-    animation: fadeIn 1s ease-out;
+    color: #333;
 }
 
 .timeline {
     position: relative;
     margin: 0 auto;
-    padding: 0;
-    list-style: none;
-    max-width: 1000px;
+    padding: 40px 0;
+    max-width: 900px;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 50%;
     top: 0;
     bottom: 0;
-    width: 2px;
+    left: 50%;
+    width: 4px;
     background: #007bff;
     transform: translateX(-50%);
 }
@@ -48,119 +39,62 @@
     width: 50%;
     padding: 20px 40px;
     box-sizing: border-box;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 1s ease-out;
 }
 
-.timeline-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+.timeline-item.left {
+    left: 0;
+    text-align: right;
 }
 
-.timeline-item:nth-child(odd) {
+.timeline-item.right {
     left: 50%;
-    transform: translateX(-100%);
-    animation: slideInLeft 1s ease-out;
+    text-align: left;
 }
 
-.timeline-item:nth-child(even) {
-    left: 50%;
-    transform: translateX(0%);
-    animation: slideInRight 1s ease-out;
+.timeline-item.left .timeline-content {
+    margin-right: 20px;
 }
 
-.timeline-item::before {
-    content: '';
+.timeline-item.right .timeline-content {
+    margin-left: 20px;
+}
+
+.timeline-dot {
     position: absolute;
-    top: 20px;
-    right: -10px;
-    width: 20px;
-    height: 20px;
+    top: 24px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
     background: #007bff;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.95);
+    transform: translateX(-50%);
 }
 
-.timeline-item:nth-child(even)::before {
-    left: -10px;
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-item h3 {
-    font-family: 'Merriweather', serif;
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.timeline-item p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.timeline-item .institution {
-    font-weight: bold;
+.timeline-content h3 {
+    margin: 0;
+    font-size: 18px;
     color: #007bff;
 }
 
-.timeline-item .dates {
-    font-style: italic;
+.timeline-content span {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
     color: #666;
 }
 
-.timeline-item .score {
-    font-weight: bold;
-    color: #007bff;
+.timeline-item.left .timeline-dot {
+    right: -8px;
+    left: auto;
 }
 
-.timeline-item .icon {
-    font-size: 2em;
-    color: #007bff;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-200%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(200%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0%);
-    }
+.timeline-item.right .timeline-dot {
+    left: 8px;
 }

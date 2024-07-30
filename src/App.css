@@ -1,6 +1,12 @@
 @import './components/background.css';
 @import './components/About.css';
 @import './components/Header.css';
+@import './components/Hero.css';
+@import './components/Languages.css';
+@import './components/Contact.css';
+@import './components/Education.css';
+@import './components/Experience.css';
+@import './components/Footer.css';
 
 :root {
   --bg-color: #f8f9fa;
@@ -20,6 +26,40 @@ body {
 }
 
 .main {
-  background: var(--bg-color);
   padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+
+  .about-section,
+  .education-section,
+  .hero-section,
+  .skills-section,
+  .experience-section,
+  .contact-section {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .about-section .container,
+  .education-section .container,
+  .hero-section .container,
+  .skills-section .container,
+  .experience-section .container,
+  .contact-section .container {
+    padding: 0;
+  }
+
+  .hero-section .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-section .hero-title,
+  .hero-section .hero-subtitle,
+  .hero-section .hero-button {
+    width: 100%;
+    margin: 10px 0;
+  }
 }

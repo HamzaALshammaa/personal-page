@@ -1,6 +1,7 @@
 .languages {
     padding: 100px 0;
-    background-color: #f8f9fa;
+    background: transparent;
+    min-height: 100vh;
 }
 
 .languages .container {
