@@ -2,21 +2,19 @@ import React, { useState } from 'react';
 import './Header.css';
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [navOpen, setNavOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
+    const toggleNav = () => {
+        setNavOpen(!navOpen);
     };
 
     return (
         <header>
-            <div className="navbar-brand">
-                <a className="navbar-brand" href="#">Hamza AL-Shammaa</a>
-            </div>
-            <button className="burger-icon" onClick={toggleMenu}>
+            <div className="navbar-brand"><a href='#'>Hamza AL-Shammaa</a></div>
+            <div className="burger-icon" onClick={toggleNav}>
                 ☰
-            </button>
-            <nav className={`nav-links ${isOpen ? 'open' : ''}`}>
+            </div>
+            <nav className={`nav-links ${navOpen ? 'open' : ''}`}>
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#education">Education</a>
